@@ -9,6 +9,7 @@ O formato brasileiro é o d/m/Y, porém o formato americano, aquele que devemos 
 
 Um exemplo de utilização, informar uma data no nosso formato e retornar a data no formato para gravação no banco:
 <!-- language: php -->
+```
 //data desejada no formato brasileiro
 $data = "25/02/2017";
 //o d/m/Y indica o formato da data que estamos fornecendo a classe, para que a data seja entendida e possa ser manipulada
@@ -17,4 +18,5 @@ $data = DateTime::createFromFormat( "d/m/Y", $data );
 $novadata = $data->format( "Y-m-d" );
 //irá mostrar 2017-02-25
 echo $novadata;
-<!-- -->
+```
+
