@@ -12,11 +12,36 @@ Um exemplo de utilização, informar uma data no nosso formato e retornar a data
 ```
 //data desejada no formato brasileiro
 $data = "25/02/2017";
+
 //o d/m/Y indica o formato da data que estamos fornecendo a classe, para que a data seja entendida e possa ser manipulada
 $data = DateTime::createFromFormat( "d/m/Y", $data );
+
 //$novadata recebe o formato desejado
 $novadata = $data->format( "Y-m-d" );
+
 //irá mostrar 2017-02-25
 echo $novadata;
 ```
+## Validando a Data com checkdate
 
+Agora que temos a data é possível utilizar uma função **checkdate** do PHP (existentes nas verses 4 a 7) para validação das datas. Esta função verifica qualquer data em formato gregoriano, como mostra o exemplo na documentação [checkdate](http://php.net/manual/pt_BR/function.checkdate.php "Documentação Oficial"):
+
+<!-- language: php -->
+```
+checkdate ( int $month , int $day , int $year )
+```
+
+A função retorna um booleano, sendo que o mês, dia e ano devem ser fornecidos. Como utilizamos o **DateTime** é possível separar esses dados de uma maneira eficiente:
+
+<!-- language: php -->
+```
+$dia = $data->format( "d" );
+$mes = $data->format( "m" );
+$ano = $data->format( "Y" );
+
+if ( checkdate( $mes, $dia, $ano ) ) echo "Data Válida!";
+else echo "Data Inválida";
+```
+Assim podemos verificar se uma data específica é verdadeira ou não.
+
+Espero ter ajudado!
