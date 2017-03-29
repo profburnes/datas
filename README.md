@@ -1,2 +1,2 @@
-# datas
-Exemplo de Trabalhos com Data em PHP
+# Trabalhando com Datas em PHP
+Exemplo simples de manipulação de datas (date) com PHP
